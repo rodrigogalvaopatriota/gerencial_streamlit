@@ -29,12 +29,14 @@ try:
   
 
     # Filtro por Coordenador (status_distancia)
+    opcoes_gerente = df["Gerente"].unique(),
     with col1:
         #st.write("### Por Coordenador:")
-        distancias = st.multiselect(
+        distancias = st.sidebar.multiselect(
             "Escolha os Coordenadores",
-            df["Gerente"].unique(),
-            default=df["Gerente"].unique()  # Seleciona todos os status por padrão
+            opcoes_gerente
+            #df["Gerente"].unique(),
+            #default=df["Gerente"].unique()  # Seleciona todos os status por padrão
             
         )
     
