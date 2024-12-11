@@ -29,16 +29,29 @@ try:
   
 
     # Filtro por Coordenador (status_distancia)
-    opcoes_gerente = df["Gerente"].unique()
+    
     with col1:
         #st.write("### Por Coordenador:")
-        distancias = st.sidebar.multiselect(
-            "Escolha os Coordenadores",
+        opcoes_gerente = df["Gerente"].unique()
+        filtro_gerente = st.sidebar.multiselect(
+            "Escolha os Coordenadore(s)",
             opcoes_gerente
-            #df["Gerente"].unique(),
-            #default=df["Gerente"].unique()  # Seleciona todos os status por padrão
-            
+                  
         )
+
+       opcoes_uf = df["Gerente"].unique()
+       filtro_gerente = st.sidebar.multiselect(
+                "Escolha as uf(s)",
+                opcoes_uf
+                      
+            )
+    
+        opcoes_municipio = df["Gerente"].unique()
+        filtro_municipio = st.sidebar.multiselect(
+                "Escolha os Município(s)",
+                opcoes_municipio
+                      
+            )
     
    
 
@@ -50,8 +63,9 @@ try:
     else:
         # Filtrar os dados com base nas seleções
         data = df[
-            (df["Gerente"].isin(distancias)) 
-            #(df["nome_coordenador"].isin(coordenadores))
+            (df["Gerente"].isin(filtro_gerente))&
+            (df["uf"].isin(opcoes_uf))&
+            (df["municipio"].isin(opcoes_uf))
         ]
 
        
