@@ -15,17 +15,16 @@ try:
      
     )
 
-    st.title("Produtividade") 
+    st.title("Reparo repetido") 
     # Criar duas colunas para o layout
     col1, col2 = st.columns([4, 1])  # Ajuste as proporções como preferir (3:2, 1:1, etc.)
 
     # Carregar os dados do arquivo Excel
-    df = pd.read_excel(f'resultado_coordenador_campo.xlsx') 
-    df = df.rename(columns={'Supervisor':'Coordenador'})
+    df = pd.read_excel(f'resultado_reparo_repetido.xlsx') 
+    #df = df.rename(columns={'Supervisor':'Coordenador'})
 
     df_tecnico = pd.read_excel(f'resultado_tecnico_campo.xlsx') 
-    df_tecnico_top = df_tecnico.head(10)
-    df_tecnico_bottom = df_tecnico.tail(10)
+    
    
   
 
@@ -61,13 +60,20 @@ try:
             st.write("### Por Coordenador", width=4000)
             st.dataframe(data, width=4000)  # Define a largura da tabela
 
-            st.write("### Por Técnico", width=4000)
+            
+            
+            """ 
+              st.write("### Por Técnico", width=4000)
             st.markdown('<p style="font-size:20px; font-weight:bold;">Top</p>', unsafe_allow_html=True)
             #st.write("### Top", width=4000)
             st.dataframe(df_tecnico_top, width=4000)  # Define a largura da tabela
             st.markdown('<p style="font-size:20px; font-weight:bold;">Bottom</p>', unsafe_allow_html=True)
             #st.write("### Bottom", width=4000)
             st.dataframe(df_tecnico_bottom, width=4000)  # Define a largura da tabela
+          
+            
+            
+            """
           
 
     
