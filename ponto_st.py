@@ -29,7 +29,7 @@ try:
   
 
     # Filtro por Coordenador (status_distancia)
-    opcoes_gerente = df["Gerente"].unique(),
+    opcoes_gerente = df["Gerente"].unique()
     with col1:
         #st.write("### Por Coordenador:")
         distancias = st.sidebar.multiselect(
