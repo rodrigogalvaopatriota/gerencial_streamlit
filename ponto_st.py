@@ -33,8 +33,8 @@ try:
         #st.write("### Por Coordenador:")
         distancias = st.multiselect(
             "Escolha os Coordenadores",
-            df["Coordenador"].unique(),
-            default=df["Coordenador"].unique()  # Seleciona todos os status por padrão
+            df["Gerente"].unique(),
+            default=df["Gerente"].unique()  # Seleciona todos os status por padrão
             
         )
     
@@ -48,7 +48,7 @@ try:
     else:
         # Filtrar os dados com base nas seleções
         data = df[
-            (df["Coordenador"].isin(distancias)) 
+            (df["Gerente"].isin(distancias)) 
             #(df["nome_coordenador"].isin(coordenadores))
         ]
 
@@ -57,7 +57,7 @@ try:
      
         # Exibir gráficos e tabela
         with col1:
-            st.write("### Por Coordenador", width=4000)
+            st.write("### Por Gerente", width=4000)
             st.dataframe(data, width=4000)  # Define a largura da tabela
 
             
