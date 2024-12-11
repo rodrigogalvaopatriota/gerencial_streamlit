@@ -67,8 +67,8 @@ try:
     # Filtrar os dados com base nas seleções
     data = df[
         (df["Gerente"].isin(filtro_gerente))&
-        (df["uf"].isin(opcoes_uf))&
-        (df["municipio"].isin(opcoes_municipio))
+        (df["uf"].isin(filtro_uf))&
+        (df["municipio"].isin(filtro_municipio))
     ]
 
    
