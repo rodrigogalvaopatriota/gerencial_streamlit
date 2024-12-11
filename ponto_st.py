@@ -59,40 +59,40 @@ try:
    
 
     # Verificar se ambos os filtros possuem seleções
-    if not distancias:
-        st.error("Por favor, selecione pelo menos um status de distância.")
+    #if not distancias:
+        #st.error("Por favor, selecione pelo menos um status de distância.")
     
     
-    else:
-        # Filtrar os dados com base nas seleções
-        data = df[
-            (df["Gerente"].isin(filtro_gerente))&
-            (df["uf"].isin(opcoes_uf))&
-            (df["municipio"].isin(opcoes_uf))
-        ]
+    #else:
+    # Filtrar os dados com base nas seleções
+    data = df[
+        (df["Gerente"].isin(filtro_gerente))&
+        (df["uf"].isin(opcoes_uf))&
+        (df["municipio"].isin(opcoes_uf))
+    ]
 
-       
+   
 
-     
-        # Exibir gráficos e tabela
-        with col1:
-            st.write("### Por Gerente", width=4000)
-            st.dataframe(data, width=4000)  # Define a largura da tabela
+ 
+    # Exibir gráficos e tabela
+    with col1:
+        st.write("### Por Gerente", width=4000)
+        st.dataframe(data, width=4000)  # Define a largura da tabela
 
-            
-            
-            """ 
-              st.write("### Por Técnico", width=4000)
-            st.markdown('<p style="font-size:20px; font-weight:bold;">Top</p>', unsafe_allow_html=True)
-            #st.write("### Top", width=4000)
-            st.dataframe(df_tecnico_top, width=4000)  # Define a largura da tabela
-            st.markdown('<p style="font-size:20px; font-weight:bold;">Bottom</p>', unsafe_allow_html=True)
-            #st.write("### Bottom", width=4000)
-            st.dataframe(df_tecnico_bottom, width=4000)  # Define a largura da tabela
-          
-            
-            
-            """
+        
+        
+        """ 
+          st.write("### Por Técnico", width=4000)
+        st.markdown('<p style="font-size:20px; font-weight:bold;">Top</p>', unsafe_allow_html=True)
+        #st.write("### Top", width=4000)
+        st.dataframe(df_tecnico_top, width=4000)  # Define a largura da tabela
+        st.markdown('<p style="font-size:20px; font-weight:bold;">Bottom</p>', unsafe_allow_html=True)
+        #st.write("### Bottom", width=4000)
+        st.dataframe(df_tecnico_bottom, width=4000)  # Define a largura da tabela
+      
+        
+        
+        """
           
 
     
