@@ -39,8 +39,8 @@ try:
                   
         )
 
-       opcoes_uf = df["Gerente"].unique()
-       filtro_gerente = st.sidebar.multiselect(
+        opcoes_uf = df["Gerente"].unique()
+        filtro_gerente = st.sidebar.multiselect(
                 "Escolha as uf(s)",
                 opcoes_uf
                       
