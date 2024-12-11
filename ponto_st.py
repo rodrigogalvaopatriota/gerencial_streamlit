@@ -35,21 +35,24 @@ try:
         opcoes_gerente = df["Gerente"].unique()
         filtro_gerente = st.sidebar.multiselect(
             "Escolha os Coordenadore(s)",
-            opcoes_gerente
+            options=opcoes_gerente,
+            default=opcoes_gerente
                   
         )
 
-        opcoes_uf = df["Gerente"].unique()
+        opcoes_uf = df["uf"].unique()
         filtro_gerente = st.sidebar.multiselect(
                 "Escolha as uf(s)",
-                opcoes_uf
+                options=opcoes_uf,
+                default=opcoes_uf
                       
             )
     
-        opcoes_municipio = df["Gerente"].unique()
+        opcoes_municipio = df["municipio"].unique()
         filtro_municipio = st.sidebar.multiselect(
                 "Escolha os Município(s)",
-                opcoes_municipio
+                options=opcoes_municipio,
+                default=opcoes_municipio
                       
             )
     
