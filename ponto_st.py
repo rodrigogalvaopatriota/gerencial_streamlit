@@ -68,7 +68,7 @@ try:
     data = df[
         (df["Gerente"].isin(filtro_gerente))&
         (df["uf"].isin(opcoes_uf))&
-        (df["municipio"].isin(opcoes_uf))
+        (df["municipio"].isin(opcoes_municipio))
     ]
 
    
